@@ -24,3 +24,4 @@ yarn-error.log*
 
 # IDE
 /.idea
+/1to50.code-workspace
