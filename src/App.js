@@ -1,5 +1,6 @@
 import React from 'react';
 import Game1to50 from "./scenes/Game1to50";
+import './app.scss';
 
 function App() {
     return (

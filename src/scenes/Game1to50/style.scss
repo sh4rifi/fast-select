@@ -9,19 +9,17 @@
         .cell {
           width: 20%;
           padding-top: 20%;
-          background: #4285F4;
-          display: inline-block;
-          float: left;
           position: relative;
+          display: inline-block;
           outline: 5px solid #fff;
+          background-color: #4285F4;
 
           span {
-            user-select: none;
-            font-size: 44px;
-            font-weight: 700;
-            display: block;
-            cursor: pointer;
-            color: #fff;
+			  color: #fff;
+			  display: block;
+			  font-size: 44px;
+			  font-weight: 700;
+			  user-select: none;
           }
 
         }
@@ -32,14 +30,4 @@
       }
     }
   }
-}
-
-
-.display-center {
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  text-align: center;
 }

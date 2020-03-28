@@ -5,8 +5,8 @@ function Cell(props) {
     const {value, handleClick, className} = props
 
     return (
-        <div className="cell" onClick={handleClick} className={className}>
-            <span>{value}</span>
+        <div className={["cell", className].join(" ")} onClick={handleClick}>
+            <span className="display-center">{value}</span>
         </div>
     )
 }
