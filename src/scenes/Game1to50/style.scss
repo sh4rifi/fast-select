@@ -1,0 +1,45 @@
+.component-table {
+  .container {
+    .container-table {
+      .table {
+        position: relative;
+        border: 1px solid blue;
+        margin: 0 auto 6px;
+
+        .cell {
+          width: 20%;
+          padding-top: 20%;
+          background: #4285F4;
+          display: inline-block;
+          float: left;
+          position: relative;
+          outline: 5px solid #fff;
+
+          span {
+            user-select: none;
+            font-size: 44px;
+            font-weight: 700;
+            display: block;
+            cursor: pointer;
+            color: #fff;
+          }
+
+        }
+
+        .cell.selected {
+          background: #0d47a1
+        }
+      }
+    }
+  }
+}
+
+
+.display-center {
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
