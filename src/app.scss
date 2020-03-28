@@ -1,9 +1,17 @@
+// Basic
+body {
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  margin: 0;
+}
 // Helper Classes
 .display-center {
     top: 50%;
     left: 50%;
     width: 100%;
     position: absolute;
-    transform: translate(-50%, -50%);
     text-align: center;
+    transform: translate(-50%, -50%);
   }  
