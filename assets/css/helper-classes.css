@@ -1,0 +1,398 @@
+/*------------------------------------
+  Helper Classes
+  ------------------------------------*/
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.full-screen {
+    min-height: 100vh;
+}
+.div-center {
+    float: none !important;
+    display: block !important;
+    position: relative !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+.lowercase {
+    text-transform: lowercase !important;
+}
+.uppercase {
+    text-transform: uppercase !important;
+}
+.capitalize {
+    text-transform: capitalize !important;
+}
+.inline-block {
+    float: none;
+    display: inline-block;
+}
+.display-wrap {
+    position: relative;
+}
+.display-center {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.display-table {
+    width: 100%;
+    height: 100vh;
+    display: table;
+}
+.display-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+.display-screen {
+    min-height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.display-full-screen {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    position: relative;
+}
+/*
+* Overlay & Backgrounds
+*/
+.overlay-light,
+.overlay-light h3 {
+    color: var(--base-0);
+}
+.overlay-light p,
+.overlay-light h2,
+.overlay-light .section-title span {
+    color: #eee !important;
+}
+.overlay-dark,
+.overlay-dark h1,
+.overlay-dark h2,
+.overlay-dark h3,
+.overlay-dark h4,
+.overlay-dark h5,
+.overlay-dark h6 {
+    color: var(--base-1);
+}
+.overlay-dark p {
+    color: #666666;
+}
+.overlay-color,
+.overlay-pattern,
+.overlay-gradient,
+.overlay-gradient .overlay-animation,
+.overlay-color .container,
+.overlay-image .container,
+.overlay-gradient .container {
+    position: relative;
+}
+
+.overlay-image {
+    background: no-repeat center center / cover;
+}
+
+.overlay-color .bg-color,
+.bg-gradient-side .bg-color {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+}
+.overlay-pattern .bg-pattern {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.overlay-gradient .bg-gradient,
+.overlay-animation .bg-animation {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+.bg-secondary {
+    background-color: var(--secondary) !important;
+}
+.bg-dark-10 {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+.bg-dark-20 {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+.bg-dark-30 {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}
+.bg-dark-40 {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+}
+.bg-dark-50 {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+.bg-dark-60 {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+}
+.bg-dark-70 {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+.bg-dark-80 {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}
+.bg-dark-90 {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+.bg-dark-100 {
+    background-color: rgba(0, 0, 0, 1) !important;
+}
+.bg-light-10 {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+.bg-light-20 {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+.bg-light-30 {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+.bg-light-40 {
+    background-color: rgba(255, 255, 255, 0.4) !important;
+}
+.bg-light-50 {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+}
+.bg-light-60 {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+}
+.bg-light-70 {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+}
+.bg-light-80 {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+}
+.bg-light-90 {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+}
+.bg-light-100 {
+    background-color: rgba(255, 255, 255, 1) !important;
+}
+.bg-gradient,
+.bg-gradient-0 {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(var(--primary)), to(var(--secondary)));
+    background-image: linear-gradient(0deg, var(--primary) 0%, var(--secondary) 100%);
+}
+.bg-gradient-45 {
+    background-image: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
+}
+.bg-gradient-90 {
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--primary)), to(var(--secondary)));
+    background-image: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+}
+.bg-gradient-135 {
+    background-image: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+.bg-gradient-180 {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(var(--primary)), to(var(--secondary)));
+    background-image: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+}
+.bg-gradient-225 {
+    background-image: linear-gradient(225deg, var(--primary) 0%, var(--secondary) 100%);
+}
+.bg-gradient-270 {
+    background-image: -webkit-gradient(linear, right top, left top, from(var(--primary)), to(var(--secondary)));
+    background-image: linear-gradient(270deg, var(--primary) 0%, var(--secondary) 100%);
+}
+.bg-gradient-315 {
+    background-image: linear-gradient(315deg, var(--primary) 0%, var(--secondary) 100%);
+}
+.bg-gradient-360 {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(var(--primary)), to(var(--secondary)));
+    background-image: linear-gradient(360deg, var(--primary) 0%, var(--secondary) 100%);
+}
+.bg-gradient-side {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(var(--primary)));
+    background-image: linear-gradient(270deg, var(--primary) 0%, transparent 70%);
+}
+.bg-animation-1 {
+    background: linear-gradient(-45deg, var(--base-1), #151515, var(--secondary), var(--primary), var(--base-1));
+    background-size: 400% 400%;
+    animation: Gradient 9s ease infinite;
+}
+.bg-animation-2 {
+    background: linear-gradient(-45deg, var(--base-0), var(--primary), var(--secondary), var(--primary), var(--base-0));
+    background-size: 400% 400%;
+    animation: Gradient 9s ease infinite;
+}
+/*
+* Font Weight
+*/
+.fw-100 {
+    font-weight: 100 !important;
+}
+.fw-200 {
+    font-weight: 200 !important;
+}
+.fw-300 {
+    font-weight: 300 !important;
+}
+.fw-400 {
+    font-weight: 400 !important;
+}
+.fw-500 {
+    font-weight: 500 !important;
+}
+.fw-600 {
+    font-weight: 600 !important;
+}
+.fw-700 {
+    font-weight: 700 !important;
+}
+.fw-900 {
+    font-weight: 900 !important;
+}
+/*
+* Max Width
+*/
+.max-w-576 {
+    max-width: 576px;
+}
+.max-w-768 {
+    max-width: 768px;
+}
+.max-w-992 {
+    max-width: 992px;
+}
+/*
+* Text Colors
+*/
+.text-dark {
+    color: var(--base-0) !important;
+}
+.text-dark-1 {
+    color: #333333 !important;
+}
+.text-dark-2 {
+    color: #666666 !important;
+}
+.text-dark-3 {
+    color: #999999 !important;
+}
+.text-light {
+    color: var(--base-1) !important;
+}
+.text-light-1 {
+    color: #eeeeee !important;
+}
+.text-light-2 {
+    color: #cccccc !important;
+}
+.text-light-3 {
+    color: #aaaaaa !important;
+}
+.text-base-0 {
+    color: var(--base-0);
+}
+.text-base-1 {
+    color: var(--base-1);
+}
+.text-base-1 {
+    color: var(--base-1);
+}
+.text-primary {
+    color: var(--primary) !important;
+}
+.text-secondary {
+    color: var(--secondary) !important;
+}
+/*------------------------------------
+Forms
+------------------------------------*/
+.form select,
+.form textarea,
+.form input[type="tel"],
+.form input[type="text"],
+.form input[type="date"],
+.form input[type="email"],
+.form input[type="number"],
+.form input[type="search"],
+.form input[type="password"] {
+    width: 100%;
+    display: block;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.form textarea,
+.form select[multiple] {
+    min-height: 180px;
+}
+/* 
+* Form - Style 1
+*/
+.form-1 .row {
+    margin-left: -12px;
+    margin-right: -12px;
+}
+.form-1 .row > * {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.form-1 .button-block {
+    height: 50px;
+    font-size: 14px;
+    line-height: 50px;
+}
+.form-1 select,
+.form-1 textarea,
+.form-1 input[type="tel"],
+.form-1 input[type="text"],
+.form-1 input[type="date"],
+.form-1 input[type="email"],
+.form-1 input[type="number"],
+.form-1 input[type="search"],
+.form-1 input[type="password"] {
+    width: 100%;
+    height: 50px;
+    color: var(--base-1);
+    display: block;
+    font-size: 12px;
+    padding: 0 20px;
+    outline: 0;
+    border: 1px solid var(--base-1);
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.form-1 textarea {
+    padding-top: 15px;
+}
+.form-1 .form-item {
+    position: relative;
+    margin-bottom: 24px;
+}
+.form-1 input:focus,
+.form-1 select:focus,
+.form-1 textarea:focus {
+    border-color: var(--primary);
+}
+.form-1 ::placeholder {
+    color: var(--base-1);
+}
