@@ -5,9 +5,6 @@ import './app.scss';
 function App() {
     return (
         <div className="app">
-            <header className="app-header">
-                <div className="container"></div>
-            </header>
             <div className="app-wrapper">
                 <div className="app-sidebar">
                 </div>
