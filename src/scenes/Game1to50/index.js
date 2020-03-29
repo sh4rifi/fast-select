@@ -15,8 +15,15 @@ function Game1to50() {
     const arr = new List();
 
 
-    const [firstCollection, setFirstCollection] = useState(arr.range(start, (end / level), step).breakUp().get());
-    const [secondCollection, setSecondCollection] = useState(arr.range(((end / level) + step), end, step).breakUp().get());
+    const collections = () => {
+        let collections = [];
+        collections.push(arr.range(start, (end / level), step).breakUp().get());
+        collections.push(arr.range(((end / level) + step), end, step).breakUp().get());
+        return collections;
+    };
+
+    const [firstCollection, setFirstCollection] = useState(collections()[0]);
+    const [secondCollection, setSecondCollection] = useState(collections()[1]);
     const [accepted, setAccepted] = useState([]);
 
     const getDescription = () => {
@@ -48,8 +55,11 @@ function Game1to50() {
 
     };
     const resetTimer = () => {
-        stopTimer();
-        setElapsed(0);
+        setAccepted([])
+        setFirstCollection(collections()[0])
+        setSecondCollection(collections()[1])
+        stopTimer()
+        setElapsed(0)
     };
     const stopTimer = () => {
         clearInterval(increment);
