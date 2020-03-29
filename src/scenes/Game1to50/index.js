@@ -81,7 +81,7 @@ function Game1to50() {
         setAccepted(temp_accepted);
 
 
-        let next_number =  parseInt(secondCollection.splice(0, 1));
+        let next_number = (secondCollection.length > 0) ? parseInt(secondCollection.splice(0, 1)) : "REMOVED";
 
         let list = new List();
         let temp_firstCollection = list.set(firstCollection).replaceItem(number, next_number).get();
