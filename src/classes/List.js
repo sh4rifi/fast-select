@@ -26,9 +26,16 @@ export class List {
     replaceItem = (oldItem, newItem) => {
         this.array = this.array.map(item => item === oldItem ? newItem : item);
         return this;
-    }
+    };
 
-    get = () => (this.array)
+    get = () => (
+        this.array
+    );
+
+    set = (array) => {
+        this.array = array;
+        return this;
+    };
 
 }
 
