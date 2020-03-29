@@ -9,6 +9,20 @@ import './style.scss';
 function Game1to50() {
     const [collection, setCollection] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]);
 
+    /*_______________________________________timer_________________________________________________________________*/
+
+    const [elapsed, setElapsed] = useState(0);
+
+    const getMillisecond = () => {
+        return ('0' + elapsed * 100).slice(-2);
+    };
+    const getSecond = () => {
+        return ('0' + parseInt(elapsed % 60)).slice(-2);
+    };
+    const getMinute = () => {
+        return ('0' + Math.floor(elapsed / 60)).slice(-2);
+    };
+
     return (
         <section className="sectoin section-1to50">
             <SectionHeader
@@ -17,8 +31,8 @@ function Game1to50() {
             />
             <div className="component-score">
                 <div className="container">
-                    <div className="timer"></div>
-                    <div className="level"></div>
+                    <span className="timer">{getMinute()}:{getSecond()}:{getMillisecond()}</span>
+                    <span className="level"> Description</span>
                 </div>
             </div>
             <div className="component-table">
