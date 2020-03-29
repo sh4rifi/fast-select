@@ -12,8 +12,8 @@ function Game1to50() {
     const end = 10;
     const level = 2;
     const step = 1;
-    const arr = new List();
 
+    const arr = new List();
 
     const collections = () => {
         let collections = [];
@@ -24,7 +24,11 @@ function Game1to50() {
 
     const [firstCollection, setFirstCollection] = useState(collections()[0]);
     const [secondCollection, setSecondCollection] = useState(collections()[1]);
+
     const [accepted, setAccepted] = useState([]);
+
+    const [elapsed, setElapsed] = useState(0);
+    const [increment, setIncrement] = useState(0);
 
     const getDescription = () => {
         let desc;
@@ -42,42 +46,32 @@ function Game1to50() {
         return (last === 0) ? start : last + step;
     };
 
-    /*_______________________________________timer_________________________________________________________________*/
-
-    const [elapsed, setElapsed] = useState(0);
-    const [increment, setIncrement] = useState(0);
     const startTimer = () => {
         setIncrement(
             setInterval(() => {
                 setElapsed(elapsed => elapsed + 0.01);
             }, 10)
         )
-
     };
+
     const resetTimer = () => {
-        setAccepted([])
-        setFirstCollection(collections()[0])
-        setSecondCollection(collections()[1])
-        stopTimer()
+        setAccepted([]);
+        setFirstCollection(collections()[0]);
+        setSecondCollection(collections()[1]);
+        stopTimer();
         setElapsed(0)
     };
-    const stopTimer = () => {
-        clearInterval(increment);
 
-    };
-    const getMillisecond = () => {
-        return ('0' + elapsed * 100).slice(-2);
-    };
-    const getSecond = () => {
-        return ('0' + parseInt(elapsed % 60)).slice(-2);
-    };
-    const getMinute = () => {
-        return ('0' + Math.floor(elapsed / 60)).slice(-2);
-    };
+    const stopTimer = () => clearInterval(increment);
+
+    const getMillisecond = () => ('0' + elapsed * 100).slice(-2);
+
+    const getSecond = () => ('0' + parseInt(elapsed % 60)).slice(-2);
+
+    const getMinute = () => ('0' + Math.floor(elapsed / 60)).slice(-2);
 
 
     const handleClick = (number) => {
-
         if (number !== target())
             return;
 
@@ -90,18 +84,14 @@ function Game1to50() {
         temp_accepted.push(number);
         setAccepted(temp_accepted);
 
-
         let next_number = (secondCollection.length > 0) ? parseInt(secondCollection.splice(0, 1)) : "REMOVED";
-
         let list = new List();
         let temp_firstCollection = list.set(firstCollection).replaceItem(number, next_number).get();
         setFirstCollection(temp_firstCollection)
-
-        console.log(accepted)
     };
 
     return (
-        <section className="sectoin section-1to50">
+        <section className="section-1to50">
             <SectionHeader
                 h1="1 to 50"
                 p="Touching from 1 to 50 as fast as you can."
