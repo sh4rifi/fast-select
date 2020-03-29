@@ -9,13 +9,14 @@ import './style.scss';
 function Game1to50() {
 
     const start = 1;
-    const end = 5;
-    const level = 1;
+    const end = 10;
+    const level = 2;
     const step = 1;
     const arr = new List();
 
 
-    const [firstCollection] = useState(arr.range(start, (end / level), step).breakUp().get());
+    const [firstCollection, setFirstCollection] = useState(arr.range(start, (end / level), step).breakUp().get());
+    const [secondCollection, setSecondCollection] = useState(arr.range(((end / level) + step), end, step).breakUp().get());
     const [accepted, setAccepted] = useState([]);
 
     const getDescription = () => {
@@ -78,6 +79,13 @@ function Game1to50() {
         let temp_accepted = accepted;
         temp_accepted.push(number);
         setAccepted(temp_accepted);
+
+
+        let next_number =  parseInt(secondCollection.splice(0, 1));
+
+        let list = new List();
+        let temp_firstCollection = list.set(firstCollection).replaceItem(number, next_number).get();
+        setFirstCollection(temp_firstCollection)
 
         console.log(accepted)
     };
