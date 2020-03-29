@@ -6,8 +6,6 @@ import {List} from "../../classes/List";
 import './style.scss';
 
 
-
-
 function Game1to50() {
 
     const start = 1;
@@ -17,9 +15,24 @@ function Game1to50() {
     const arr = new List();
 
 
-
     const [firstCollection] = useState(arr.range(start, (end / level), step).breakUp().get());
     const [accepted, setAccepted] = useState([]);
+
+    const getDescription = () => {
+        let desc;
+        if (target() === start)
+            desc = "Game will start when you select " + target();
+        else if (target() > end)
+            desc = "Finish ";
+        else
+            desc = "Target: " + target();
+        return desc;
+    };
+
+    const target = () => {
+        let last = accepted.slice(-1)[0] ? accepted.slice(-1)[0] : 0;
+        return (last === 0) ? start : last + step;
+    };
 
     /*_______________________________________timer_________________________________________________________________*/
 
@@ -52,8 +65,11 @@ function Game1to50() {
     };
 
 
-
     const handleClick = (number) => {
+
+        if (number !== target())
+            return;
+
         if (number === start)
             startTimer();
         else if (number === end)
@@ -75,7 +91,7 @@ function Game1to50() {
             <div className="component-score">
                 <div className="container">
                     <span className="timer">{getMinute()}:{getSecond()}:{getMillisecond()}</span>
-                    <span className="level"> Description</span>
+                    <span className="level"> {getDescription()}</span>
                 </div>
             </div>
             <div className="component-table">
