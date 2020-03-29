@@ -1,10 +1,19 @@
+$primary: #4285F4;
+$secondary: #3b78db;
+
+.cell-hidden {
+  opacity: 0;
+}
+
 .component-score {
   text-align: center;
+
   span {
     display: block;
     font-size: 24px;
     margin-bottom: 30px;
   }
+
   .timer {
     font-size: 27px;
     font-weight: bold;
@@ -27,23 +36,42 @@
           position: relative;
           display: inline-block;
           outline: 5px solid #fff;
-          background-color: #4285F4;
+          background-color: $primary;
+          animation: flash 450ms;
 
           span {
-			  color: #fff;
-			  display: block;
-			  font-size: 30px;
-			  font-weight: 700;
-			  user-select: none;
-			  text-align: center;
+            color: #fff;
+            display: block;
+            font-size: 30px;
+            font-weight: 700;
+            user-select: none;
+            text-align: center;
           }
 
         }
 
+        .cell:hover {
+          background: $secondary
+        }
+
         .cell.selected {
-          background: #0d47a1
+          background: $secondary
+        }
+
+        .cell.selected:hover {
+          background: $primary
         }
       }
     }
+  }
+}
+
+
+@keyframes flash {
+  0% {
+    background: red;
+  }
+  100% {
+    background-color: $primary;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import SectionHeader from "../../components/SectionHeader";
 import Cell from "./components/Cell"
 import Button from "../../components/Button";
@@ -23,7 +23,7 @@ function Game1to50() {
             </div>
             <div className="component-table">
                 <div className="container">
-                    <div className="container-table">
+                    <div className="container-table max-w-576 div-center">
                         <div className="table">
                             {collection.map((number, i) => (
                                 <Cell
@@ -37,11 +37,13 @@ function Game1to50() {
             </div>
             <div className="component-control">
                 <div className="container">
-                    <Button
-                        title="Reset"
-                        size="button-lg"
-                        type="button-block button-primary"
-                    />
+                    <div className="max-w-576 div-center">
+                        <Button
+                            title="Reset"
+                            size="button-lg"
+                            type="button-block button-primary"
+                        />
+                    </div>
                 </div>
             </div>
         </section>
