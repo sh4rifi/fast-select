@@ -19,6 +19,7 @@ function Game1to50() {
 
 
     const [firstCollection] = useState(arr.range(start, (end / level), step).breakUp().get());
+    const [accepted, setAccepted] = useState([]);
 
     /*_______________________________________timer_________________________________________________________________*/
 
@@ -57,6 +58,12 @@ function Game1to50() {
             startTimer();
         else if (number === end)
             stopTimer();
+
+        let temp_accepted = accepted;
+        temp_accepted.push(number);
+        setAccepted(temp_accepted);
+
+        console.log(accepted)
     };
 
     return (
